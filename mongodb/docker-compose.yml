@@ -1,5 +1,9 @@
 csrs1:
   image: mongo:3.2
   volumes:
+    - /etc/localtime:/etc/localtime
     - /data/mongodb/cs/rs1:/data/db
-  command: mongod --version
+  privileged: true
+  mem_limit: 100000000
+  cpu_shares: 7
+  tty: true
