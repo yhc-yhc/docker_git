@@ -6,4 +6,3 @@ csrs1:
   privileged: true
   mem_limit: 100000000
   cpu_shares: 7
-  tty: true
