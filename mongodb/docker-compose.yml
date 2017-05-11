@@ -1,0 +1,5 @@
+csrs1:
+  image: mongo:3.2
+  volumes:
+    - /data/mongodb/cs/rs1:/data/db
+  command: mongod --version
