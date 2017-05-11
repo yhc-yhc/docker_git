@@ -160,4 +160,5 @@
 ### use docker-compose
 
 	curl -L https://github.com/docker/compose/releases/download/1.4.2/docker-compose-Linux-x86_64 > /usr/bin/docker-compose
+	
 	chmod  +x /usr/bin/docker-compose
