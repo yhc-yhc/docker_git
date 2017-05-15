@@ -13,7 +13,7 @@ docker rm ngx;
 docker run \
 --privileged=true -v /etc/localtime:/etc/localtime \
 -v ~/work/ngx_log:/var/log/nginx \
--v ~/ngx_conf:/etc/nginx/conf.d \
--v ~/work/ngx_demo/demo:/www \
+-v ~/work/ngx_conf:/etc/nginx/conf.d \
+-v ~/work/ngx_demo:/www \
 -p 80:80 \
 --name ngx -d nginx
