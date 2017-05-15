@@ -8,7 +8,7 @@ cp -r ~/work/docker_git/ngx/ngx_demo ~/work/ngx_demo
 
 
 docker stop ngx;
-doker rm ngx;
+docker rm ngx;
 
 docker run \
 --privileged=true -v /etc/localtime:/etc/localtime \
