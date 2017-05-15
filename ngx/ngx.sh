@@ -6,6 +6,10 @@ cd work
 cp -r ~/work/docker_git/ngx/ngx_conf ~/work/ngx_conf
 cp -r ~/work/docker_git/ngx/ngx_demo ~/work/ngx_demo
 
+
+docker stop ngx;
+doker rm ngx;
+
 docker run \
 --privileged=true -v /etc/localtime:/etc/localtime \
 -v ~/work/nginx:/var/log/nginx \
