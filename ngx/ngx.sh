@@ -4,7 +4,7 @@ mkdir work || { echo work dir exists; }
 cd work
 
 cp -r ~/work/docker_git/ngx/ngx_conf ~/work/ngx_conf
-cp -r ~/work/docker_git/ngx/ngx_demo ~/work/ngx_demo
+# cp -r ~/work/docker_git/ngx/ngx_demo ~/work/ngx_demo
 
 
 docker stop ngx;
