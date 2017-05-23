@@ -15,10 +15,10 @@ docker run \
 --privileged=true -v /etc/localtime:/etc/localtime \
 -v ~/work/ngx_log:/usr/local/openresty/nginx/logs \
 -v ~/work/docker_git/ngx/ngix.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro  \
--v ~/work/docker_git/ngx/ngx_conf:/etc/nginx/conf.d
+-v ~/work/docker_git/ngx/ngx_conf:/etc/nginx/conf.d \
 -v ~/work/pictureAir/static:/www \
 -p 80:80 \
---name ngx -d openresty/openresty:1.9.15.1-trusty
+--name ngx -d openresty/openresty
 
 #!/usr/bin/env bash
 # docker run -d --name="nginx" 
