@@ -1,32 +1,35 @@
-csrs1:
+master:
   image: mongo:3.2
   volumes:
     - /etc/localtime:/etc/localtime
-    - /data/mongodb/cs/rs1:/data/db
+    - ~/data/mongodb/master:/data/db
   privileged: true
   ports:
     - '828:27017'
+  command: mongod --dbpath /data/db  --replSet pictureAir
   mem_limit: 100000000
   cpu_shares: 7
 
-csrs2:
+rs2:
   image: mongo:3.2
   volumes:
     - /etc/localtime:/etc/localtime
-    - /data/mongodb/cs/rs2:/data/db
+    - ~/data/mongodb/rs2:/data/db
   privileged: true
   ports:
     - '827:27017'
+  command: mongod --dbpath /data/db  --replSet pictureAir
   # mem_limit: 100000000
   # cpu_shares: 7
 
-csrs3:
+rs3:
   image: mongo:3.2
   volumes:
     - /etc/localtime:/etc/localtime
-    - /data/mongodb/cs/rs3:/data/db
+    - ~/data/mongodb/rs3:/data/db
   privileged: true
   ports:
     - '826:27017'
+  command: mongod --dbpath /data/db  --replSet pictureAir
   # mem_limit: 100000000
   # cpu_shares: 7
