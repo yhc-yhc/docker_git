@@ -10,11 +10,11 @@ master:
   mem_limit: 100000000
   cpu_shares: 7
 
-rs2:
+secondary:
   image: mongo:3.2
   volumes:
     - /etc/localtime:/etc/localtime
-    - ~/data/mongodb/rs2:/data/db
+    - ~/data/mongodb/secondary:/data/db
   privileged: true
   ports:
     - '827:27017'
@@ -22,11 +22,11 @@ rs2:
   # mem_limit: 100000000
   # cpu_shares: 7
 
-rs3:
+arbiter:
   image: mongo:3.2
   volumes:
     - /etc/localtime:/etc/localtime
-    - ~/data/mongodb/rs3:/data/db
+    - ~/data/mongodb/arbiter:/data/db
   privileged: true
   ports:
     - '826:27017'
