@@ -4,5 +4,7 @@ csrs1:
     - /etc/localtime:/etc/localtime
     - /data/mongodb/cs/rs1:/data/db
   privileged: true
+  ports:
+    - '828:27017'
   mem_limit: 100000000
   cpu_shares: 7
