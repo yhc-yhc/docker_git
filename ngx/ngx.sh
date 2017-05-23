@@ -17,4 +17,4 @@ docker run \
 -v ~/work/docker_git/ngx/ngx_conf:/etc/nginx/conf.d \
 -v ~/work/pictureAir/static:/www \
 -p 80:80 \
---name ngx -d nginx
+--name ngx -d openresty/openresty:1.9.15.1-trusty
