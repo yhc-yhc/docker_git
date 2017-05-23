@@ -6,6 +6,7 @@ cd work
 # cp -r ~/work/docker_git/ngx/ngx_conf ~/work/ngx_conf
 # cp -r ~/work/docker_git/ngx/ngx_demo ~/work/ngx_demo
 
+# rm -rf ngx_log
 
 docker stop ngx;
 docker rm ngx;
