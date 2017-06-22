@@ -1,35 +1,37 @@
-master:
-  image: mongo:3.2
-  volumes:
-    - /etc/localtime:/etc/localtime
-    - ~/data/mongodb/master:/data/db
-  privileged: true
-  ports:
-    - '828:27017'
-  command: mongod --dbpath /data/db  --replSet pictureAir
-  mem_limit: 100000000
-  cpu_shares: 7
+version: '2'
+services:
+  master:
+    image: mongo:3.2
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - ~/data/mongodb/master:/data/db
+    privileged: true
+    ports:
+      - '8828:27017'
+    command: mongod --dbpath /data/db  --replSet pictureAir --oplogSize 128
+    # mem_limit: 100000000
+    # cpu_shares: 7
 
-secondary:
-  image: mongo:3.2
-  volumes:
-    - /etc/localtime:/etc/localtime
-    - ~/data/mongodb/secondary:/data/db
-  privileged: true
-  ports:
-    - '827:27017'
-  command: mongod --dbpath /data/db  --replSet pictureAir
-  # mem_limit: 100000000
-  # cpu_shares: 7
+  secondary:
+    image: mongo:3.2
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - ~/data/mongodb/secondary:/data/db
+    privileged: true
+    ports:
+      - '8827:27017'
+    command: mongod --dbpath /data/db  --replSet pictureAir --oplogSize 128
+    # mem_limit: 100000000
+    # cpu_shares: 7
 
-arbiter:
-  image: mongo:3.2
-  volumes:
-    - /etc/localtime:/etc/localtime
-    - ~/data/mongodb/arbiter:/data/db
-  privileged: true
-  ports:
-    - '826:27017'
-  command: mongod --dbpath /data/db  --replSet pictureAir
-  # mem_limit: 100000000
-  # cpu_shares: 7
+  arbiter:
+    image: mongo:3.2
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - ~/data/mongodb/arbiter:/data/db
+    privileged: true
+    ports:
+      - '8826:27017'
+    command: mongod --dbpath /data/db  --replSet pictureAir --smallfiles --oplogSize 128
+    # mem_limit: 100000000
+    # cpu_shares: 7
