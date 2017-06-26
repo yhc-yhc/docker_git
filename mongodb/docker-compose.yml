@@ -8,7 +8,7 @@ services:
     privileged: true
     ports:
       - '8828:27017'
-    command: mongod --dbpath /data/db  --replSet pictureAir --oplogSize 128
+    command: mongod --dbpath /data/db  --replSet pictureAir --oplogSize 128 --storageEngine wiredTiger
     # mem_limit: 100000000
     # cpu_shares: 7
 
@@ -20,7 +20,7 @@ services:
     privileged: true
     ports:
       - '8827:27017'
-    command: mongod --dbpath /data/db  --replSet pictureAir --oplogSize 128
+    command: mongod --dbpath /data/db  --replSet pictureAir --oplogSize 128 --storageEngine wiredTiger
     # mem_limit: 100000000
     # cpu_shares: 7
 
@@ -32,6 +32,6 @@ services:
     privileged: true
     ports:
       - '8826:27017'
-    command: mongod --dbpath /data/db  --replSet pictureAir --smallfiles --oplogSize 128
+    command: mongod --dbpath /data/db  --replSet pictureAir --smallfiles --oplogSize 128 --storageEngine wiredTiger
     # mem_limit: 100000000
     # cpu_shares: 7
