@@ -16,6 +16,6 @@ docker run \
 -v ~/work/ngx_log:/usr/local/openresty/nginx/logs \
 -v ~/work/docker_git/ngx/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro  \
 -v ~/work/docker_git/ngx/ngx_conf/nas:/usr/local/openresty/nginx/conf/conf.d \
--v /mnt/photos:/www \
+-v /photos:/www/photos \
 -p 80:80 \
 --name ngx -d openresty/openresty
