@@ -12,4 +12,4 @@ docker run \
 -p 8827:27017 \
 --name mongodb -d mongo:3.2
 
-docker exec -it mongodb /bin/bash -c 'mongorestore -d pictureAir --dir /src';
+docker exec mongodb /bin/bash -c 'mongorestore -d pictureAir --dir /src';
