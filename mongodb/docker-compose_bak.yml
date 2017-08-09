@@ -1,0 +1,32 @@
+version: '2'  
+services:  
+  nginx:  
+    build: ./nginx  
+    ports:  
+      - 80:80  
+    networks:  
+      jznet:  
+        ipv4_address: 172.18.4.30  
+    restart: always  
+  access:  
+    image: reg-mirror.shie.site/pst-test/access:devsit_0.0.3  
+    networks:  
+      jznet:  
+        ipv4_address: 172.18.4.24  
+    volumes:  
+      - ./logs/access/:/usr/local/tomcat/logs/  
+    environment:  
+      - ENV_NAME=devsit  
+      - JAVA_OPTS=-Xmx1024m -Xms1024m -XX:PermSize=256m -XX:MaxPermSize=512m -XX:+PrintGCDetails -XX:+PrintGCDateStamps  
+    expose:  
+      - 8080  
+      - 20881  
+    ports:  
+      - 9090:8080  
+networks:  
+  jznet:  
+    driver: bridge  
+    ipam:  
+      driver: default  
+      config:  
+      - subnet: 172.18.4.0/26  
