@@ -19,5 +19,6 @@ docker run \
 -v ~/work/pictureAir/static:/www/pictureAir \
 -v ~/work/moderation_frontend:/www/moderation_frontend \
 -v ~/work/pa_vt_office/static:/www/pa_vt \
+-v /data/website:/www/data/website\
 -p 80:80 \
 --name ngx -d openresty/openresty
