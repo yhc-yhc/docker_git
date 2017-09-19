@@ -164,3 +164,15 @@
 	chmod  +x /usr/bin/docker-compose
 
 cat ~/.ssh/id_rsa.pub | pbcopy
+
+### centos7 run after start
+	[Unit]
+	Requires=docker.service
+	After=docker.service
+
+	[Service]
+	Type=forking
+	ExecStart=/etc/systemd/system/PWApps.sh
+
+	[Install]
+	WantedBy=multi-user.target
